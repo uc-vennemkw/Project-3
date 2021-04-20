@@ -1,0 +1,21 @@
+#Sets the execution policy to unrestricted to allow the script to run. 
+Set-ExecutionPolicy Unrestricted
+#Creating the new object for the shortcut that I will call in later code. The Com object designates it as a execuable script
+$WshShell = New-Object -comObject Wscript.Shell 
+#This Code Creates the shortcut that will be placed on the desktop
+$Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Canvas Home.lnk")
+#Used TargetPath to tell the shortcut to point to the Canvas Home page
+$Shortcut.TargetPath = "https://uc.instructure.com/"
+#The save code saves it to the desktop
+$Shortcut.Save() 
+
+#Creating the new object for the shortcut that I will call in later code. The Com object designates it as a execuable script
+$WshShell = New-Object -comObject Wscript.Shell 
+#This Code Creates the shortcut that will be placed on the desktop
+$Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Catalyst.lnk")
+#Used TargetPath to tell the shortcut to point to the Catalyst home page
+$Shortcut.TargetPath = "https://www.catalyst.uc.edu/"
+#The save code saves it to the desktop
+$Shortcut.Save()
+
+Get-Process | Select-Object -Property ProcessName, id | Export-CSV c:\users\public\desktop\service.csv 
