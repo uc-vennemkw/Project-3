@@ -18,4 +18,4 @@ $Shortcut.TargetPath = "https://www.catalyst.uc.edu/"
 #The save code saves it to the desktop
 $Shortcut.Save()
 
-Get-Process | Select-Object -Property ProcessName, id | Export-CSV c:\users\public\desktop\service.csv 
+Select-Object -Property ProcessName, id | Export-CSV c:\users\public\desktop\service.csv 
